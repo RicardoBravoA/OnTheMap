@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,13 +16,61 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YL8-33-lwB">
+                                <rect key="frame" x="60" y="44" width="294" height="360"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sbk-If-CxI">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="vQZ-Kh-9qB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ien-BB-o2O">
+                                        <rect key="frame" x="0.0" y="128" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ifb-qD-PaA">
+                                        <rect key="frame" x="0.0" y="170" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsR-dY-Ia5">
+                                        <rect key="frame" x="0.0" y="212" width="294" height="30"/>
+                                        <state key="normal" title="LOG IN"/>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U7u-bn-bMF" userLabel="Horizontal Stack View">
+                                        <rect key="frame" x="47" y="250" width="200" height="110"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="AsR-dY-Ia5" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="2rG-OH-Ac9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ifb-qD-PaA" secondAttribute="trailing" id="ESP-2J-h3f"/>
+                                    <constraint firstItem="sbk-If-CxI" firstAttribute="top" secondItem="YL8-33-lwB" secondAttribute="top" id="LvT-gH-8Pb"/>
+                                    <constraint firstItem="sbk-If-CxI" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="Wni-w8-Gfy"/>
+                                    <constraint firstAttribute="trailing" secondItem="AsR-dY-Ia5" secondAttribute="trailing" id="ZhG-md-4h3"/>
+                                    <constraint firstItem="ien-BB-o2O" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="c1I-qi-Pec"/>
+                                    <constraint firstAttribute="trailing" secondItem="sbk-If-CxI" secondAttribute="trailing" id="exx-uk-bii"/>
+                                    <constraint firstItem="AsR-dY-Ia5" firstAttribute="top" secondItem="Ifb-qD-PaA" secondAttribute="bottom" constant="8" symbolic="YES" id="hBu-Dl-2Uu"/>
+                                    <constraint firstItem="Ifb-qD-PaA" firstAttribute="top" secondItem="ien-BB-o2O" secondAttribute="bottom" constant="8" symbolic="YES" id="pjT-IJ-QZe"/>
+                                    <constraint firstAttribute="trailing" secondItem="ien-BB-o2O" secondAttribute="trailing" id="ue9-b6-XXS"/>
+                                    <constraint firstItem="Ifb-qD-PaA" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="y25-yo-Ca1"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YL8-33-lwB" secondAttribute="trailing" constant="60" id="Dp2-FT-4gB"/>
+                            <constraint firstItem="YL8-33-lwB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QKI-Yh-YtD"/>
+                            <constraint firstItem="YL8-33-lwB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="Sw4-hr-xXg"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="94"/>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>
     </scenes>
     <resources>
