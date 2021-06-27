@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="udacity-logo" translatesAutoresizingMaskIntoConstraints="NO" id="sbk-If-CxI">
+                                <rect key="frame" x="157" y="68" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2v1-ou-e69"/>
+                                    <constraint firstAttribute="width" constant="100" id="q9n-bf-ZPY"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YL8-33-lwB" userLabel="Vertical Stack View">
+                                <rect key="frame" x="60" y="192" width="294" height="114"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vFc-nJ-6jK">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LH4-VY-Skp">
+                                        <rect key="frame" x="0.0" y="42" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="516-t5-Udj">
+                                        <rect key="frame" x="0.0" y="84" width="294" height="30"/>
+                                        <state key="normal" title="LOG IN"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="516-t5-Udj" firstAttribute="top" secondItem="LH4-VY-Skp" secondAttribute="bottom" constant="8" symbolic="YES" id="8bQ-Wa-SHU"/>
+                                    <constraint firstItem="vFc-nJ-6jK" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="FwE-ro-o7I"/>
+                                    <constraint firstItem="516-t5-Udj" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="IMT-0d-3KH"/>
+                                    <constraint firstAttribute="trailing" secondItem="vFc-nJ-6jK" secondAttribute="trailing" id="JaM-C5-PB3"/>
+                                    <constraint firstAttribute="trailing" secondItem="516-t5-Udj" secondAttribute="trailing" id="Scj-s4-JU3"/>
+                                    <constraint firstAttribute="trailing" secondItem="LH4-VY-Skp" secondAttribute="trailing" id="Ydz-fU-hkG"/>
+                                    <constraint firstItem="LH4-VY-Skp" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="rWB-5B-7Pg"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wq1-Xb-YBS" userLabel="Horizontal Stack View">
+                                <rect key="frame" x="86.5" y="330" width="241" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oY-46-DRi">
+                                        <rect key="frame" x="0.0" y="5" width="179" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLH-wL-5HC">
+                                        <rect key="frame" x="187" y="0.0" width="54" height="30"/>
+                                        <state key="normal" title="Sign Up"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YL8-33-lwB" secondAttribute="trailing" constant="60" id="5n6-9d-svB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YL8-33-lwB" secondAttribute="trailing" constant="60" id="Dp2-FT-4gB"/>
+                            <constraint firstItem="sbk-If-CxI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="EO6-Ap-nHR"/>
+                            <constraint firstItem="YL8-33-lwB" firstAttribute="top" secondItem="sbk-If-CxI" secondAttribute="bottom" constant="24" id="K1a-Fq-mkx"/>
+                            <constraint firstItem="sbk-If-CxI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZM3-1n-k2b"/>
+                            <constraint firstItem="Wq1-Xb-YBS" firstAttribute="top" secondItem="YL8-33-lwB" secondAttribute="bottom" constant="24" id="ilQ-5R-rlU"/>
+                            <constraint firstItem="YL8-33-lwB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="otF-q3-11j"/>
+                            <constraint firstItem="Wq1-Xb-YBS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rJM-bq-VZK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="udacity-logo" width="556" height="556"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
