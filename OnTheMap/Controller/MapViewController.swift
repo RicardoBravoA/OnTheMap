@@ -11,13 +11,15 @@ import MapKit
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    var annotations = [MKPointAnnotation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     func loadData(){
-        var annotations = [MKPointAnnotation]()
+        mapView.removeAnnotations(annotations)
+        annotations.removeAll()
         
         for student in DataModel.studentList {
             let latitude = CLLocationDegrees(student.latitude)
@@ -33,7 +35,9 @@ class MapViewController: UIViewController {
             annotations.append(annotation)
         }
         
-        self.mapView.addAnnotations(annotations)
+        DispatchQueue.main.async {
+            self.mapView.addAnnotations(self.annotations)
+        }
     }
     
 }

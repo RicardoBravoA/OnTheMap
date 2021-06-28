@@ -15,7 +15,7 @@ class StudentLocationViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func loadData(){
+    func loadData() {
         tableView?.reloadData()
     }
     
