@@ -42,6 +42,10 @@ class LoginViewController: UIViewController {
         
     }
     
+    @IBAction func signUp(_ sender: UIButton) {
+        UIApplication.shared.open(EndPoint.web.url, options: [:], completionHandler: nil)
+    }
+    
     private func alertError(message: String) {
         let alertController = UIAlertController(title: "On The Map", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
