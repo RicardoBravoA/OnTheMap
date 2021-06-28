@@ -11,3 +11,9 @@ struct ErrorResponse: Codable {
     let status: Int
     let error: String
 }
+
+extension ErrorResponse: LocalizedError {
+    var errorDescription: String? {
+        return error
+    }
+}
