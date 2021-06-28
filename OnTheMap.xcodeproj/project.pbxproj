@@ -25,6 +25,7 @@
 		C6D4DADD26896C5000BCE1AC /* StudentLocationItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DADC26896C5000BCE1AC /* StudentLocationItemResponse.swift */; };
 		C6D4DADF26896E0A00BCE1AC /* StudentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DADE26896E0A00BCE1AC /* StudentLocationViewController.swift */; };
 		C6D4DAE126896E3000BCE1AC /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAE026896E3000BCE1AC /* DataModel.swift */; };
+		C6D4DAE32689739400BCE1AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAE22689739400BCE1AC /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		C6D4DADC26896C5000BCE1AC /* StudentLocationItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationItemResponse.swift; sourceTree = "<group>"; };
 		C6D4DADE26896E0A00BCE1AC /* StudentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationViewController.swift; sourceTree = "<group>"; };
 		C6D4DAE026896E3000BCE1AC /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		C6D4DAE22689739400BCE1AC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				C6A3A4862687DD1C00834774 /* LoginViewController.swift */,
 				C6D4DADE26896E0A00BCE1AC /* StudentLocationViewController.swift */,
+				C6D4DAE22689739400BCE1AC /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				C6D4DAC72689460000BCE1AC /* EndPoint.swift in Sources */,
 				C6D4DACD26894A0000BCE1AC /* LoginRequestItem.swift in Sources */,
 				C6D4DAD026894A7200BCE1AC /* ErrorResponse.swift in Sources */,
+				C6D4DAE32689739400BCE1AC /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

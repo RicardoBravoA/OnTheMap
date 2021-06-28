@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qVd-zm-rlj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -98,52 +98,14 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="8Wj-Qe-Rwh">
             <objects>
-                <tableViewController id="Xps-Ss-zek" sceneMemberID="viewController">
+                <tableViewController id="Xps-Ss-zek" customClass="MapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DIW-Xz-FUR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="100" id="Q9A-jx-xNJ" customClass="TableViewCell" customModule="OnTheMap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q9A-jx-xNJ" id="DOm-XU-Gud">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UGU-2W-lRN">
-                                            <rect key="frame" x="8" y="0.0" width="100" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="uaP-Dp-Uyo"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SDS-b3-mPE">
-                                            <rect key="frame" x="124" y="0.0" width="274" height="100"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="SDS-b3-mPE" firstAttribute="leading" secondItem="UGU-2W-lRN" secondAttribute="trailing" constant="16" id="0gs-Ot-sS3"/>
-                                        <constraint firstItem="SDS-b3-mPE" firstAttribute="top" secondItem="DOm-XU-Gud" secondAttribute="top" id="AkR-O3-R1i"/>
-                                        <constraint firstItem="UGU-2W-lRN" firstAttribute="leading" secondItem="DOm-XU-Gud" secondAttribute="leading" constant="8" id="Eor-WV-fnD"/>
-                                        <constraint firstAttribute="trailing" secondItem="SDS-b3-mPE" secondAttribute="trailing" constant="16" id="K1p-C3-xRy"/>
-                                        <constraint firstItem="UGU-2W-lRN" firstAttribute="top" secondItem="DOm-XU-Gud" secondAttribute="top" id="cOF-c4-IsD"/>
-                                        <constraint firstAttribute="bottom" secondItem="SDS-b3-mPE" secondAttribute="bottom" id="hpV-Q1-4KI"/>
-                                        <constraint firstAttribute="bottom" secondItem="UGU-2W-lRN" secondAttribute="bottom" id="igj-Xx-wNf"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="memeImageView" destination="UGU-2W-lRN" id="mWG-EG-pkm"/>
-                                    <outlet property="memeLabel" destination="SDS-b3-mPE" id="9s0-fU-NgA"/>
-                                    <outlet property="memeView" destination="DOm-XU-Gud" id="YpK-Kx-eQG"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="map" catalog="system" id="tfk-5Q-J8J"/>
                     <navigationItem key="navigationItem" id="sHn-g0-3wh"/>
@@ -197,10 +159,10 @@
             </objects>
             <point key="canvasLocation" x="2203" y="94"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Student View Controller-->
         <scene sceneID="Ph4-re-Jt1">
             <objects>
-                <tableViewController id="mOo-ED-DPg" sceneMemberID="viewController">
+                <tableViewController id="mOo-ED-DPg" customClass="StudentViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ny9-GX-i8Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,11 +171,11 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="100" id="IDe-lW-Ii4" customClass="TableViewCell" customModule="OnTheMap" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IDe-lW-Ii4" id="HF4-k1-wBg">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IDe-lW-Ii4" id="HF4-k1-wBg" userLabel="Student View">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Z28-AX-v1J">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Z28-AX-v1J" userLabel="StudentImage View">
                                             <rect key="frame" x="10" y="9.5" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="3Af-5i-7St"/>
@@ -256,10 +218,6 @@
                                         <constraint firstAttribute="trailing" secondItem="lQe-Ip-m8b" secondAttribute="trailing" constant="10" id="og7-qy-ZKh"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="memeImageView" destination="Z28-AX-v1J" id="VJH-Bk-e8N"/>
-                                    <outlet property="memeView" destination="HF4-k1-wBg" id="nrJ-v1-bMn"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
