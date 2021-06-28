@@ -18,7 +18,6 @@ class MapViewController: UIViewController {
     }
     
     func loadData(){
-        
         mapView.removeAnnotations(annotations)
         annotations.removeAll()
         

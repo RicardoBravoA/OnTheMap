@@ -12,8 +12,12 @@ class DashboardViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        getStudentList()
+    }
+    
+    private func getStudentList() {
         ApiClient.studentLocation { response, error in
+            DataModel.studentList.removeAll()
             DataModel.studentList = response
             self.reloadData()
         }
@@ -30,4 +34,7 @@ class DashboardViewController: UITabBarController {
         studentLocationViewController.loadData()
     }
     
+    @IBAction func reloadData(_ sender: UIBarButtonItem) {
+        getStudentList()
+    }
 }

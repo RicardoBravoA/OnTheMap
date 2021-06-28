@@ -126,7 +126,11 @@
                         <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="3nd-cu-Qhk"/>
                         <rightBarButtonItems>
                             <barButtonItem image="plus" catalog="system" id="Xll-4K-cz7"/>
-                            <barButtonItem image="arrow.clockwise" catalog="system" id="blY-aA-DRP"/>
+                            <barButtonItem image="arrow.clockwise" catalog="system" id="blY-aA-DRP">
+                                <connections>
+                                    <action selector="reloadData:" destination="HMI-SL-2JK" id="MBd-JL-2S8"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rum-qb-2lN">
