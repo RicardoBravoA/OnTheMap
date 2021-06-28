@@ -13,25 +13,11 @@ class StudentLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ApiClient.studentLocation { response, error in
-            DataModel.studentList = response
-            self.tableView.reloadData()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-    }
-    
-    private func verifyUrl (urlString: String?) -> Bool {
-       if let urlString = urlString {
-           if let url  = URL(string: urlString) {
-            return UIApplication.shared.canOpenURL(url)
-           }
-       }
-       return false
     }
     
 }

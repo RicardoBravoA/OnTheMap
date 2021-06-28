@@ -29,6 +29,7 @@
 		C6D4DAE52689804900BCE1AC /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAE42689804900BCE1AC /* StudentTableViewCell.swift */; };
 		C6D4DAE8268986B200BCE1AC /* BrowserUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAE7268986B200BCE1AC /* BrowserUtil.swift */; };
 		C6D4DAEA268989AF00BCE1AC /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAE9268989AF00BCE1AC /* AlertUtil.swift */; };
+		C6D4DAEC2689A15A00BCE1AC /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAEB2689A15A00BCE1AC /* DashboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		C6D4DAE42689804900BCE1AC /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		C6D4DAE7268986B200BCE1AC /* BrowserUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserUtil.swift; sourceTree = "<group>"; };
 		C6D4DAE9268989AF00BCE1AC /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
+		C6D4DAEB2689A15A00BCE1AC /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				C6A3A4862687DD1C00834774 /* LoginViewController.swift */,
 				C6D4DADE26896E0A00BCE1AC /* StudentLocationViewController.swift */,
 				C6D4DAE22689739400BCE1AC /* MapViewController.swift */,
+				C6D4DAEB2689A15A00BCE1AC /* DashboardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				C6D4DACB2689486000BCE1AC /* LoginRequest.swift in Sources */,
 				C6D4DAE126896E3000BCE1AC /* DataModel.swift in Sources */,
 				C6D4DAD426894AC200BCE1AC /* AccountResponse.swift in Sources */,
+				C6D4DAEC2689A15A00BCE1AC /* DashboardViewController.swift in Sources */,
 				C6D4DAD226894AAE00BCE1AC /* LoginResponse.swift in Sources */,
 				C6D4DAE8268986B200BCE1AC /* BrowserUtil.swift in Sources */,
 				C6A3A4832687DD1C00834774 /* AppDelegate.swift in Sources */,
