@@ -22,7 +22,10 @@ class ApiClient {
     }
     
     class func studentLocation(completion: @escaping ([StudentLocationItemResponse], Error?) -> Void) {
-        taskForGETRequest(url: EndPoint.web.url, response: StudentLocationResponse.self) { response, error in
+        print(EndPoint.studentLocation.url)
+        taskForGETRequest(url: EndPoint.studentLocation.url, response: StudentLocationResponse.self) { response, error in
+            print(response)
+            print(error)
             if let response = response {
                 completion(response.results, nil)
             } else {

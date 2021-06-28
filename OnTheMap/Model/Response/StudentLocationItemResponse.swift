@@ -17,5 +17,5 @@ struct StudentLocationItemResponse: Codable {
     let uniqueKey: String
     let objectId: String
     let createdAt: String
-    let updateAt: String
+    let updatedAt: String
 }

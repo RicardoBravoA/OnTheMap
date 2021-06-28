@@ -14,7 +14,12 @@ class StudentLocationViewController: UIViewController {
     var selectedIndex = 0
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
+        ApiClient.studentLocation { response, error in
+            DataModel.studentList = response
+            self.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,32 +31,21 @@ class StudentLocationViewController: UIViewController {
 
 extension StudentLocationViewController: UITableViewDataSource, UITableViewDelegate {
  
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataModel.studentList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell") as! StudentTableViewCell
         
         let student = DataModel.studentList[indexPath.row]
         
-        cell.textLabel?.text = movie.title
-        if #available(iOS 13.0, *) {
-            cell.imageView?.image = UIImage(systemName: "ticket")
-        }
-        
-        if let posterPah = movie.posterPath {
-            ApiClient.image(posterPath: posterPah) { data, error in
-                guard let data = data else { return }
-                cell.imageView?.image = UIImage(data: data)
-                cell.setNeedsLayout()
-            }
-        }
-        
+        cell.nameLabel.text = "\(student.firstName) \(student.lastName)"
+        cell.urlLabel.text = student.mediaURL
         return cell
     }
     
