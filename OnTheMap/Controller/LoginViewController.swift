@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUp(_ sender: UIButton) {
-        BrowserUtil.open(url: EndPoint.web.url)
+        BrowserUtil.open(viewController: self, urlString: EndPoint.web.value)
     }
     
 }
