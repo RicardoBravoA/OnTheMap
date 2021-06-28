@@ -55,15 +55,7 @@ extension StudentLocationViewController: UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let student = DataModel.studentList[indexPath.row]
         
-        if let url = URL(string: student.mediaURL) {
-            if verifyUrl(urlString: student.mediaURL) {
-                BrowserUtil.open(url: url)
-            } else {
-                AlertUtil.show(viewController: self, message: "URL not valid")
-            }
-        } else {
-            AlertUtil.show(viewController: self, message: "URL not valid")
-        }
+        BrowserUtil.open(viewController: self, urlString: student.mediaURL)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
