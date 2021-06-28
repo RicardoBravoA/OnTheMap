@@ -9,8 +9,8 @@ import UIKit
 
 class AlertUtil {
     
-    static func abc(viewController: UIViewController, title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    static func show(viewController: UIViewController, message: String) {
+        let alertController = UIAlertController(title: "On the Map", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         viewController.present(alertController, animated: true, completion: nil)
     }

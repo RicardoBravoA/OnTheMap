@@ -23,12 +23,12 @@ class LoginViewController: UIViewController {
         let pwd = pwdTextField.text
         
         if email?.isEmpty == true {
-            alertError(message: "Enter Email")
+            AlertUtil.show(viewController: self, message: "Enter Email")
             return
         }
         
         if pwd?.isEmpty == true {
-            alertError(message: "Enter Password")
+            AlertUtil.show(viewController: self, message: "Enter Password")
             return
         }
         
@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
             if success {
                 self.performSegue(withIdentifier: "dashboardSegue", sender: nil)
             } else {
-                self.alertError(message: error?.localizedDescription ?? "")
+                AlertUtil.show(viewController: self, message: error?.localizedDescription ?? "")
             }
         }
         
@@ -44,12 +44,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func signUp(_ sender: UIButton) {
         BrowserUtil.open(url: EndPoint.web.url)
-    }
-    
-    private func alertError(message: String) {
-        let alertController = UIAlertController(title: "On The Map", message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        show(alertController, sender: nil)
     }
     
 }
