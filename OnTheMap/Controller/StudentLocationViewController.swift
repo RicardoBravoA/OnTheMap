@@ -11,8 +11,6 @@ class StudentLocationViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var selectedIndex = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,13 +25,18 @@ class StudentLocationViewController: UIViewController {
         tableView.reloadData()
     }
     
+    private func verifyUrl (urlString: String?) -> Bool {
+       if let urlString = urlString {
+           if let url  = URL(string: urlString) {
+            return UIApplication.shared.canOpenURL(url)
+           }
+       }
+       return false
+    }
+    
 }
 
 extension StudentLocationViewController: UITableViewDataSource, UITableViewDelegate {
- 
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataModel.studentList.count
@@ -50,8 +53,21 @@ extension StudentLocationViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath.row
-        print(selectedIndex)
+        let student = DataModel.studentList[indexPath.row]
+        
+        if let url = URL(string: student.mediaURL) {
+            if verifyUrl(urlString: student.mediaURL) {
+                BrowserUtil.open(url: url)
+            } else {
+                AlertUtil.show(viewController: self, message: "URL not valid")
+            }
+        } else {
+            AlertUtil.show(viewController: self, message: "URL not valid")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
 }
