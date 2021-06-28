@@ -153,6 +153,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fKw-rw-zHr">
                                 <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QDO-ph-9cz" id="gaG-FJ-0iq"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XB0-Ua-WrO"/>
@@ -165,6 +168,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="map" catalog="system" id="bzp-hc-k4W"/>
+                    <connections>
+                        <outlet property="mapView" destination="fKw-rw-zHr" id="2x6-xu-Z8g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQm-Qg-b0K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
