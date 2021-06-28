@@ -12,6 +12,7 @@ enum EndPoint {
     
     case login
     case web
+    case studentLocation
     
     var value: String {
         switch self {
@@ -19,6 +20,8 @@ enum EndPoint {
                 return EndPoint.urlBase + "session"
             case .web:
                 return "https://auth.udacity.com/sign-in"
+            case .studentLocation:
+                return EndPoint.urlBase + "StudentLocation?order=-updatedAt"
         }
     }
     
