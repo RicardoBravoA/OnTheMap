@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
         
         ApiClient.login(user: email ?? "", pwd: pwd ?? "") { success, error in
             if success {
-                print("Successful login!")
+                self.performSegue(withIdentifier: "dashboardSegue", sender: nil)
             } else {
                 self.alertError(message: error?.localizedDescription ?? "")
             }
