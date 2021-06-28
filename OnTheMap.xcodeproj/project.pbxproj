@@ -17,6 +17,7 @@
 		C6D4DAC72689460000BCE1AC /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAC62689460000BCE1AC /* EndPoint.swift */; };
 		C6D4DACB2689486000BCE1AC /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DACA2689486000BCE1AC /* LoginRequest.swift */; };
 		C6D4DACD26894A0000BCE1AC /* LoginRequestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DACC26894A0000BCE1AC /* LoginRequestItem.swift */; };
+		C6D4DAD026894A7200BCE1AC /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DACF26894A7200BCE1AC /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C6D4DAC62689460000BCE1AC /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		C6D4DACA2689486000BCE1AC /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		C6D4DACC26894A0000BCE1AC /* LoginRequestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestItem.swift; sourceTree = "<group>"; };
+		C6D4DACF26894A7200BCE1AC /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				C6D4DAC92689485400BCE1AC /* Request */,
+				C6D4DACE26894A5B00BCE1AC /* Response */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +128,14 @@
 				C6D4DACC26894A0000BCE1AC /* LoginRequestItem.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		C6D4DACE26894A5B00BCE1AC /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				C6D4DACF26894A7200BCE1AC /* ErrorResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +215,7 @@
 				C6D4DAC52689456500BCE1AC /* ApiClient.swift in Sources */,
 				C6D4DAC72689460000BCE1AC /* EndPoint.swift in Sources */,
 				C6D4DACD26894A0000BCE1AC /* LoginRequestItem.swift in Sources */,
+				C6D4DAD026894A7200BCE1AC /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
