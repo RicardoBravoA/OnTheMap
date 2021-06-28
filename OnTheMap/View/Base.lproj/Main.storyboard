@@ -42,6 +42,7 @@
                                         <state key="normal" title="LOG IN"/>
                                         <connections>
                                             <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iDb-2s-ju6"/>
+                                            <segue destination="oPv-nt-HgR" kind="show" identifier="dashboardSegue" id="gAo-Ta-6fT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -94,8 +95,61 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="O3z-rf-AiE">
+            <objects>
+                <viewController id="EDr-Oy-Yx2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="edA-Fb-hE5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Cna-bz-E5B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="list.dash" catalog="system" id="Zu0-rK-NcW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ozw-ni-A1E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1849" y="397"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OpU-Cc-CYL">
+            <objects>
+                <viewController id="E7C-C2-hq3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3L9-r7-gf2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZJJ-Hh-Tv7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="mappin" catalog="system" id="yC9-Oc-SjF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8u-H2-pIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1849" y="-209"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="s2L-OW-O2H">
+            <objects>
+                <tabBarController modalPresentationStyle="fullScreen" id="oPv-nt-HgR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pqD-1h-KiR"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mD4-GO-9gE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="E7C-C2-hq3" kind="relationship" relationship="viewControllers" id="2su-Qe-bb6"/>
+                        <segue destination="EDr-Oy-Yx2" kind="relationship" relationship="viewControllers" id="5w7-tg-Zji"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wg5-Id-RAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="94"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="udacity-logo" width="556" height="556"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
