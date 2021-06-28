@@ -18,6 +18,9 @@
 		C6D4DACB2689486000BCE1AC /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DACA2689486000BCE1AC /* LoginRequest.swift */; };
 		C6D4DACD26894A0000BCE1AC /* LoginRequestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DACC26894A0000BCE1AC /* LoginRequestItem.swift */; };
 		C6D4DAD026894A7200BCE1AC /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DACF26894A7200BCE1AC /* ErrorResponse.swift */; };
+		C6D4DAD226894AAE00BCE1AC /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAD126894AAE00BCE1AC /* LoginResponse.swift */; };
+		C6D4DAD426894AC200BCE1AC /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAD326894AC200BCE1AC /* AccountResponse.swift */; };
+		C6D4DAD626894AE800BCE1AC /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAD526894AE800BCE1AC /* SessionResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		C6D4DACA2689486000BCE1AC /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		C6D4DACC26894A0000BCE1AC /* LoginRequestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestItem.swift; sourceTree = "<group>"; };
 		C6D4DACF26894A7200BCE1AC /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		C6D4DAD126894AAE00BCE1AC /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		C6D4DAD326894AC200BCE1AC /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
+		C6D4DAD526894AE800BCE1AC /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				C6D4DACF26894A7200BCE1AC /* ErrorResponse.swift */,
+				C6D4DAD126894AAE00BCE1AC /* LoginResponse.swift */,
+				C6D4DAD326894AC200BCE1AC /* AccountResponse.swift */,
+				C6D4DAD526894AE800BCE1AC /* SessionResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -208,8 +217,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D4DAD626894AE800BCE1AC /* SessionResponse.swift in Sources */,
 				C6A3A4872687DD1C00834774 /* LoginViewController.swift in Sources */,
 				C6D4DACB2689486000BCE1AC /* LoginRequest.swift in Sources */,
+				C6D4DAD426894AC200BCE1AC /* AccountResponse.swift in Sources */,
+				C6D4DAD226894AAE00BCE1AC /* LoginResponse.swift in Sources */,
 				C6A3A4832687DD1C00834774 /* AppDelegate.swift in Sources */,
 				C6A3A4852687DD1C00834774 /* SceneDelegate.swift in Sources */,
 				C6D4DAC52689456500BCE1AC /* ApiClient.swift in Sources */,
