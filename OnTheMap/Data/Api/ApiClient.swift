@@ -38,7 +38,9 @@ class ApiClient {
             
             let decoder = JSONDecoder()
             do {
-                let response = try decoder.decode(ResponseType.self, from: data)
+                let newData = data.subdata(in: 5..<data.count)
+                
+                let response = try decoder.decode(ResponseType.self, from: newData)
                 DispatchQueue.main.async {
                     completion(response, nil)
                 }
