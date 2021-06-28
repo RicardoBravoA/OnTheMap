@@ -15,6 +15,8 @@
 		C6A3A48F2687DD1C00834774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A48D2687DD1C00834774 /* LaunchScreen.storyboard */; };
 		C6D4DAC52689456500BCE1AC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAC42689456400BCE1AC /* ApiClient.swift */; };
 		C6D4DAC72689460000BCE1AC /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAC62689460000BCE1AC /* EndPoint.swift */; };
+		C6D4DACB2689486000BCE1AC /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DACA2689486000BCE1AC /* LoginRequest.swift */; };
+		C6D4DACD26894A0000BCE1AC /* LoginRequestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DACC26894A0000BCE1AC /* LoginRequestItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		C6A3A4902687DD1C00834774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6D4DAC42689456400BCE1AC /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		C6D4DAC62689460000BCE1AC /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		C6D4DACA2689486000BCE1AC /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		C6D4DACC26894A0000BCE1AC /* LoginRequestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		C6A3A4962687E09C00834774 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C6D4DAC92689485400BCE1AC /* Request */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +116,15 @@
 				C6D4DAC62689460000BCE1AC /* EndPoint.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		C6D4DAC92689485400BCE1AC /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				C6D4DACA2689486000BCE1AC /* LoginRequest.swift */,
+				C6D4DACC26894A0000BCE1AC /* LoginRequestItem.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +198,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6A3A4872687DD1C00834774 /* LoginViewController.swift in Sources */,
+				C6D4DACB2689486000BCE1AC /* LoginRequest.swift in Sources */,
 				C6A3A4832687DD1C00834774 /* AppDelegate.swift in Sources */,
 				C6A3A4852687DD1C00834774 /* SceneDelegate.swift in Sources */,
 				C6D4DAC52689456500BCE1AC /* ApiClient.swift in Sources */,
 				C6D4DAC72689460000BCE1AC /* EndPoint.swift in Sources */,
+				C6D4DACD26894A0000BCE1AC /* LoginRequestItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
