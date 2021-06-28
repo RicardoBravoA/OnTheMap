@@ -116,9 +116,8 @@ extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
-            let app = UIApplication.shared
             if let toOpen = view.annotation?.subtitle! {
-                print(URL(string: toOpen)!)
+                BrowserUtil.open(viewController: self, urlString: toOpen)
             }
         }
     }
