@@ -213,32 +213,51 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z28-AX-v1J">
-                                            <rect key="frame" x="8" y="0.0" width="100" height="100"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Z28-AX-v1J">
+                                            <rect key="frame" x="10" y="9.5" width="80" height="80"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="DWH-Dj-lVk"/>
+                                                <constraint firstAttribute="width" constant="80" id="3Af-5i-7St"/>
+                                                <constraint firstAttribute="height" constant="80" id="aJn-sE-NGO"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gyH-pn-RcC">
-                                            <rect key="frame" x="124" y="0.0" width="274" height="100"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lQe-Ip-m8b">
+                                            <rect key="frame" x="100" y="10" width="304" height="80"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCC-Kn-2bx" userLabel="Name Label">
+                                                    <rect key="frame" x="0.0" y="0.0" width="304" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al7-HG-NnS" userLabel="Web Label">
+                                                    <rect key="frame" x="0.0" y="40" width="304" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="al7-HG-NnS" secondAttribute="bottom" id="3vs-pt-zN7"/>
+                                                <constraint firstItem="al7-HG-NnS" firstAttribute="leading" secondItem="lQe-Ip-m8b" secondAttribute="leading" id="6Go-LW-LYn"/>
+                                                <constraint firstAttribute="trailing" secondItem="wCC-Kn-2bx" secondAttribute="trailing" id="A3r-M0-IGT"/>
+                                                <constraint firstItem="wCC-Kn-2bx" firstAttribute="leading" secondItem="lQe-Ip-m8b" secondAttribute="leading" id="Cms-d8-d33"/>
+                                                <constraint firstItem="wCC-Kn-2bx" firstAttribute="top" secondItem="lQe-Ip-m8b" secondAttribute="top" id="PdY-bl-a9F"/>
+                                                <constraint firstAttribute="trailing" secondItem="al7-HG-NnS" secondAttribute="trailing" id="utz-an-xSV"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="gyH-pn-RcC" firstAttribute="top" secondItem="HF4-k1-wBg" secondAttribute="top" id="3HO-6L-7QM"/>
-                                        <constraint firstItem="gyH-pn-RcC" firstAttribute="leading" secondItem="Z28-AX-v1J" secondAttribute="trailing" constant="16" id="I55-cg-wxa"/>
-                                        <constraint firstAttribute="bottom" secondItem="gyH-pn-RcC" secondAttribute="bottom" id="MyD-xf-TMW"/>
-                                        <constraint firstItem="Z28-AX-v1J" firstAttribute="top" secondItem="HF4-k1-wBg" secondAttribute="top" id="apB-q5-Y6p"/>
-                                        <constraint firstAttribute="trailing" secondItem="gyH-pn-RcC" secondAttribute="trailing" constant="16" id="clh-cH-MCo"/>
-                                        <constraint firstAttribute="bottom" secondItem="Z28-AX-v1J" secondAttribute="bottom" id="dEl-GT-m40"/>
-                                        <constraint firstItem="Z28-AX-v1J" firstAttribute="leading" secondItem="HF4-k1-wBg" secondAttribute="leading" constant="8" id="ynC-RM-pIY"/>
+                                        <constraint firstAttribute="bottom" secondItem="Z28-AX-v1J" secondAttribute="bottom" constant="10" id="CHb-hr-mZE"/>
+                                        <constraint firstItem="lQe-Ip-m8b" firstAttribute="top" secondItem="HF4-k1-wBg" secondAttribute="top" constant="10" id="Esk-1B-3sp"/>
+                                        <constraint firstItem="lQe-Ip-m8b" firstAttribute="leading" secondItem="Z28-AX-v1J" secondAttribute="trailing" constant="10" id="OXw-BT-pSr"/>
+                                        <constraint firstItem="Z28-AX-v1J" firstAttribute="top" secondItem="HF4-k1-wBg" secondAttribute="top" constant="10" id="QBs-vf-QHX"/>
+                                        <constraint firstAttribute="bottom" secondItem="lQe-Ip-m8b" secondAttribute="bottom" constant="10" id="Tyi-CQ-Q42"/>
+                                        <constraint firstItem="Z28-AX-v1J" firstAttribute="leading" secondItem="HF4-k1-wBg" secondAttribute="leading" constant="10" id="VKz-Qd-53s"/>
+                                        <constraint firstAttribute="trailing" secondItem="lQe-Ip-m8b" secondAttribute="trailing" constant="10" id="og7-qy-ZKh"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="memeImageView" destination="Z28-AX-v1J" id="VJH-Bk-e8N"/>
-                                    <outlet property="memeLabel" destination="gyH-pn-RcC" id="v8v-CZ-b5O"/>
                                     <outlet property="memeView" destination="HF4-k1-wBg" id="nrJ-v1-bMn"/>
                                 </connections>
                             </tableViewCell>
@@ -256,6 +275,7 @@
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="map" catalog="system" width="128" height="110"/>
+        <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="udacity-logo" width="556" height="556"/>
         <systemColor name="systemBackgroundColor">
