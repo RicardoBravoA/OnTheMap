@@ -9,6 +9,18 @@ import Foundation
 
 class ApiClient {
     
+    class func login(user: String, pwd: String, completion: @escaping (Bool, Error?) -> Void) {
+        let loginRequest = LoginRequest(udacity: LoginRequestItem(username: user, password: pwd))
+        
+        taskForPOSTRequest(url: EndPoint.login.url, body: loginRequest, response: LoginResponse.self) { response, error in
+            if response != nil {
+                completion(true, nil)
+            } else {
+                completion(false, error)
+            }
+        }
+    }
+    
     class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, body: RequestType, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
