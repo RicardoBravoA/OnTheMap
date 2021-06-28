@@ -27,6 +27,8 @@
 		C6D4DAE126896E3000BCE1AC /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAE026896E3000BCE1AC /* DataModel.swift */; };
 		C6D4DAE32689739400BCE1AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAE22689739400BCE1AC /* MapViewController.swift */; };
 		C6D4DAE52689804900BCE1AC /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAE42689804900BCE1AC /* StudentTableViewCell.swift */; };
+		C6D4DAE8268986B200BCE1AC /* BrowserUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAE7268986B200BCE1AC /* BrowserUtil.swift */; };
+		C6D4DAEA268989AF00BCE1AC /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAE9268989AF00BCE1AC /* AlertUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		C6D4DAE026896E3000BCE1AC /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		C6D4DAE22689739400BCE1AC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C6D4DAE42689804900BCE1AC /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		C6D4DAE7268986B200BCE1AC /* BrowserUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserUtil.swift; sourceTree = "<group>"; };
+		C6D4DAE9268989AF00BCE1AC /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		C6A3A4812687DD1C00834774 /* OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				C6D4DAE6268986A300BCE1AC /* Util */,
 				C6D4DAC22689453D00BCE1AC /* Data */,
 				C6A3A4982687E0AF00834774 /* Controller */,
 				C6A3A4972687E0A500834774 /* View */,
@@ -165,6 +170,15 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		C6D4DAE6268986A300BCE1AC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C6D4DAE7268986B200BCE1AC /* BrowserUtil.swift */,
+				C6D4DAE9268989AF00BCE1AC /* AlertUtil.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,8 +257,10 @@
 				C6D4DAE126896E3000BCE1AC /* DataModel.swift in Sources */,
 				C6D4DAD426894AC200BCE1AC /* AccountResponse.swift in Sources */,
 				C6D4DAD226894AAE00BCE1AC /* LoginResponse.swift in Sources */,
+				C6D4DAE8268986B200BCE1AC /* BrowserUtil.swift in Sources */,
 				C6A3A4832687DD1C00834774 /* AppDelegate.swift in Sources */,
 				C6A3A4852687DD1C00834774 /* SceneDelegate.swift in Sources */,
+				C6D4DAEA268989AF00BCE1AC /* AlertUtil.swift in Sources */,
 				C6D4DADB26896BA700BCE1AC /* StudentLocationResponse.swift in Sources */,
 				C6D4DAC52689456500BCE1AC /* ApiClient.swift in Sources */,
 				C6D4DAC72689460000BCE1AC /* EndPoint.swift in Sources */,

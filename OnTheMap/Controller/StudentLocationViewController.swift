@@ -11,8 +11,6 @@ class StudentLocationViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var selectedIndex = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,10 +28,6 @@ class StudentLocationViewController: UIViewController {
 }
 
 extension StudentLocationViewController: UITableViewDataSource, UITableViewDelegate {
- 
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataModel.studentList.count
@@ -50,8 +44,18 @@ extension StudentLocationViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath.row
-        print(selectedIndex)
+        let student = DataModel.studentList[indexPath.row]
+        let url = URL(string: student.mediaURL)
+        
+        guard let validURL = url else {
+            print("URL not valid")
+            return
+        }
+        BrowserUtil.open(url: validURL)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
 }
