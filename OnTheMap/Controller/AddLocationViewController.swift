@@ -6,23 +6,93 @@
 //
 
 import UIKit
+import MapKit
 
 class AddLocationViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var ubicationTextField: UITextField!
+    @IBOutlet weak var websiteTextField: UITextField!
+    @IBOutlet weak var findLocationButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboard()
+        
+        ubicationTextField.text = "Lima, Perú"
+        websiteTextField.text = "http://google.com"
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func findLocation(_ sender: UIButton) {
-        if activityIndicator.isAnimating {
-            activityIndicator.stopAnimating()
+        loading(true)
+        let website = websiteTextField.text
+        
+        guard let ubication = ubicationTextField.text, ubication.isEmpty == false else {
+            show(message: "Enter a valid ubication")
+            loading(false)
+            return
+        }
+        
+        if !verifyUrl(urlString: website) {
+            show(message: "Enter a valid website url")
+            loading(false)
+            return
+        }
+        
+        geocode(ubication: ubication)
+        
+    }
+    
+    private func loading(_ loading: Bool) {
+        if loading {
+            DispatchQueue.main.async {
+                self.activityIndicator.startAnimating()
+                self.buttonEnabled(false, button: self.findLocationButton)
+            }
         } else {
-            activityIndicator.startAnimating()
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.buttonEnabled(true, button: self.findLocationButton)
+            }
+        }
+        DispatchQueue.main.async {
+            self.ubicationTextField.isEnabled = !loading
+            self.websiteTextField.isEnabled = !loading
+            self.findLocationButton.isEnabled = !loading
         }
     }
+    
+    private func geocode(ubication: String) {
+        CLGeocoder().geocodeAddressString(ubication) { marker, error in
+            if error != nil {
+                self.show(message: "Ubication not found")
+                self.loading(false)
+            } else {
+                guard let marker = marker else {
+                    self.show(message: "Ubication not found")
+                    self.loading(false)
+                    return
+                }
+                
+                var location: CLLocation?
+                
+                if marker.count > 0 {
+                    location = marker.first?.location
+                }
+                
+                self.loading(false)
+                
+                if let location = location {
+                    // Move to next view controller
+                } else {
+                    self.show(message: "An error ocurred getting the coordinates")
+                }
+            }
+        }
+    }
+    
 }
