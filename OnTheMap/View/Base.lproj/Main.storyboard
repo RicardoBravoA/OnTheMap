@@ -17,81 +17,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="udacity-logo" translatesAutoresizingMaskIntoConstraints="NO" id="sbk-If-CxI">
-                                <rect key="frame" x="157" y="68" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="2v1-ou-e69"/>
-                                    <constraint firstAttribute="width" constant="100" id="q9n-bf-ZPY"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YL8-33-lwB" userLabel="Vertical Stack View">
-                                <rect key="frame" x="60" y="192" width="294" height="114"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5QY-6i-HD9">
+                                <rect key="frame" x="60" y="310" width="294" height="276"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vFc-nJ-6jK">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LH4-VY-Skp">
-                                        <rect key="frame" x="0.0" y="42" width="294" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="516-t5-Udj">
-                                        <rect key="frame" x="0.0" y="84" width="294" height="30"/>
-                                        <state key="normal" title="LOG IN"/>
-                                        <connections>
-                                            <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iDb-2s-ju6"/>
-                                            <segue destination="qVd-zm-rlj" kind="show" identifier="dashboardSegue" id="QBx-zX-N88"/>
-                                        </connections>
-                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="udacity-logo" translatesAutoresizingMaskIntoConstraints="NO" id="sbk-If-CxI">
+                                        <rect key="frame" x="97" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="2v1-ou-e69"/>
+                                            <constraint firstAttribute="width" constant="100" id="q9n-bf-ZPY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YL8-33-lwB" userLabel="Vertical Stack View">
+                                        <rect key="frame" x="0.0" y="116" width="294" height="114"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vFc-nJ-6jK">
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LH4-VY-Skp">
+                                                <rect key="frame" x="0.0" y="42" width="294" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="516-t5-Udj">
+                                                <rect key="frame" x="0.0" y="84" width="294" height="30"/>
+                                                <state key="normal" title="LOG IN"/>
+                                                <connections>
+                                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iDb-2s-ju6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="516-t5-Udj" firstAttribute="top" secondItem="LH4-VY-Skp" secondAttribute="bottom" constant="8" symbolic="YES" id="8bQ-Wa-SHU"/>
+                                            <constraint firstAttribute="trailing" secondItem="LH4-VY-Skp" secondAttribute="trailing" id="AdL-pl-TKC"/>
+                                            <constraint firstItem="LH4-VY-Skp" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="BYA-J5-FcL"/>
+                                            <constraint firstItem="vFc-nJ-6jK" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="WXn-V8-prl"/>
+                                            <constraint firstItem="516-t5-Udj" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="gRG-KE-BcV"/>
+                                            <constraint firstAttribute="trailing" secondItem="516-t5-Udj" secondAttribute="trailing" id="kZp-2G-tx1"/>
+                                            <constraint firstAttribute="trailing" secondItem="vFc-nJ-6jK" secondAttribute="trailing" id="sUM-29-Vzb"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wq1-Xb-YBS" userLabel="Horizontal Stack View">
+                                        <rect key="frame" x="26.5" y="246" width="241" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oY-46-DRi">
+                                                <rect key="frame" x="0.0" y="5" width="179" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLH-wL-5HC">
+                                                <rect key="frame" x="187" y="0.0" width="54" height="30"/>
+                                                <state key="normal" title="Sign Up"/>
+                                                <connections>
+                                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mxk-bm-Cqn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="516-t5-Udj" firstAttribute="top" secondItem="LH4-VY-Skp" secondAttribute="bottom" constant="8" symbolic="YES" id="8bQ-Wa-SHU"/>
-                                    <constraint firstItem="vFc-nJ-6jK" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="FwE-ro-o7I"/>
-                                    <constraint firstItem="516-t5-Udj" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="IMT-0d-3KH"/>
-                                    <constraint firstAttribute="trailing" secondItem="vFc-nJ-6jK" secondAttribute="trailing" id="JaM-C5-PB3"/>
-                                    <constraint firstAttribute="trailing" secondItem="516-t5-Udj" secondAttribute="trailing" id="Scj-s4-JU3"/>
-                                    <constraint firstAttribute="trailing" secondItem="LH4-VY-Skp" secondAttribute="trailing" id="Ydz-fU-hkG"/>
-                                    <constraint firstItem="LH4-VY-Skp" firstAttribute="leading" secondItem="YL8-33-lwB" secondAttribute="leading" id="rWB-5B-7Pg"/>
+                                    <constraint firstItem="YL8-33-lwB" firstAttribute="leading" secondItem="5QY-6i-HD9" secondAttribute="leading" id="93z-ea-bZT"/>
+                                    <constraint firstAttribute="trailing" secondItem="YL8-33-lwB" secondAttribute="trailing" id="bCu-3X-WuM"/>
                                 </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wq1-Xb-YBS" userLabel="Horizontal Stack View">
-                                <rect key="frame" x="86.5" y="330" width="241" height="30"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oY-46-DRi">
-                                        <rect key="frame" x="0.0" y="5" width="179" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLH-wL-5HC">
-                                        <rect key="frame" x="187" y="0.0" width="54" height="30"/>
-                                        <state key="normal" title="Sign Up"/>
-                                        <connections>
-                                            <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mxk-bm-Cqn"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YL8-33-lwB" secondAttribute="trailing" constant="60" id="5n6-9d-svB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YL8-33-lwB" secondAttribute="trailing" constant="60" id="Dp2-FT-4gB"/>
-                            <constraint firstItem="sbk-If-CxI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="EO6-Ap-nHR"/>
-                            <constraint firstItem="YL8-33-lwB" firstAttribute="top" secondItem="sbk-If-CxI" secondAttribute="bottom" constant="24" id="K1a-Fq-mkx"/>
-                            <constraint firstItem="sbk-If-CxI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZM3-1n-k2b"/>
-                            <constraint firstItem="Wq1-Xb-YBS" firstAttribute="top" secondItem="YL8-33-lwB" secondAttribute="bottom" constant="24" id="ilQ-5R-rlU"/>
-                            <constraint firstItem="YL8-33-lwB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="otF-q3-11j"/>
-                            <constraint firstItem="Wq1-Xb-YBS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rJM-bq-VZK"/>
+                            <constraint firstItem="5QY-6i-HD9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="DF0-DE-ycn"/>
+                            <constraint firstItem="5QY-6i-HD9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LwI-11-lLw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5QY-6i-HD9" secondAttribute="trailing" constant="60" id="cBE-aX-WAq"/>
+                            <constraint firstItem="5QY-6i-HD9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vNJ-rE-Wax"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="vFc-nJ-6jK" id="HNL-7l-rIa"/>
                         <outlet property="loginButton" destination="516-t5-Udj" id="deR-ZD-ecW"/>
                         <outlet property="pwdTextField" destination="LH4-VY-Skp" id="kpJ-bv-wIG"/>
+                        <segue destination="qVd-zm-rlj" kind="show" identifier="dashboardSegue" id="SW8-PO-yIC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

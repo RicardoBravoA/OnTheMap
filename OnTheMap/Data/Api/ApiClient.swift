@@ -25,7 +25,6 @@ class ApiClient {
     }
     
     class func userProfile(completion: @escaping (Bool, Error?) -> Void) {
-        print(EndPoint.userProfile(value: Auth.uniqueKey).url)
         taskForGETRequest(url: EndPoint.userProfile(value: Auth.uniqueKey).url, response: UserProfileResponse.self, resize: true) { response, error in
             if let response = response {
                 Auth.firstName = response.firstName
@@ -68,19 +67,15 @@ class ApiClient {
             }
             let decoder = JSONDecoder()
             do {
-                var newData: Data
-                if resize {
-                    newData = data.subdata(in: 5..<data.count)
-                } else {
-                     newData = data
-                }
+                let newData = resizeData(data: data, resize: resize)
                 let response = try decoder.decode(ResponseType.self, from: newData)
                 DispatchQueue.main.async {
                     completion(response, nil)
                 }
             } catch {
                 do {
-                    let errorResponse = try decoder.decode(ErrorResponse.self, from: data)
+                    let newData = resizeData(data: data, resize: resize)
+                    let errorResponse = try decoder.decode(ErrorResponse.self, from: newData)
                     DispatchQueue.main.async {
                         completion(nil, errorResponse)
                     }
@@ -111,19 +106,15 @@ class ApiClient {
             
             let decoder = JSONDecoder()
             do {
-                var newData: Data
-                if resize {
-                    newData = data.subdata(in: 5..<data.count)
-                } else {
-                     newData = data
-                }
+                let newData = resizeData(data: data, resize: resize)
                 let response = try decoder.decode(ResponseType.self, from: newData)
                 DispatchQueue.main.async {
                     completion(response, nil)
                 }
             } catch {
                 do {
-                    let errorResponse = try decoder.decode(ErrorResponse.self, from: data)
+                    let newData = resizeData(data: data, resize: resize)
+                    let errorResponse = try decoder.decode(ErrorResponse.self, from: newData)
                     DispatchQueue.main.async {
                         completion(nil, errorResponse as Error)
                     }
@@ -135,6 +126,16 @@ class ApiClient {
             }
         }
         task.resume()
+    }
+    
+    private class func resizeData(data: Data, resize: Bool) -> Data {
+        var newData: Data
+        if resize {
+            newData = data.subdata(in: 5..<data.count)
+        } else {
+             newData = data
+        }
+        return newData
     }
     
 }
