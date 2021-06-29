@@ -17,6 +17,12 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         hideKeyboard()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        emailTextField.text = ""
+        pwdTextField.text = ""
+    }
 
     @IBAction func login(_ sender: UIButton) {
         let email = emailTextField.text

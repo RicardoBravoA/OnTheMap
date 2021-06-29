@@ -52,6 +52,12 @@ class DashboardViewController: UITabBarController {
     }
     
     @IBAction func logout(_ sender: Any) {
-        
+        ApiClient.logout { success, error in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.show(message: error?.localizedDescription ?? "")
+            }
+        }
     }
 }
