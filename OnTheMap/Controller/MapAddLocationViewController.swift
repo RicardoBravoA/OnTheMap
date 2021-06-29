@@ -18,8 +18,6 @@ class MapAddLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showLocation()
-        
-        print(studentLocationRequest)
     }
     
     private func showLocation() {

@@ -132,7 +132,7 @@
                         <rightBarButtonItems>
                             <barButtonItem image="plus" catalog="system" id="Xll-4K-cz7">
                                 <connections>
-                                    <segue destination="O5C-qV-9xq" kind="showDetail" id="uRX-8P-Qf3"/>
+                                    <action selector="addLocation:" destination="HMI-SL-2JK" id="ZPe-yf-z2B"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="arrow.clockwise" catalog="system" id="blY-aA-DRP">
@@ -150,6 +150,7 @@
                     <connections>
                         <segue destination="QDO-ph-9cz" kind="relationship" relationship="viewControllers" id="RcA-Dj-Mw3"/>
                         <segue destination="sci-aV-gy9" kind="relationship" relationship="viewControllers" id="EjE-au-tBM"/>
+                        <segue destination="O5C-qV-9xq" kind="showDetail" identifier="addLocationSegue" id="BMu-Yf-Iz4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54X-au-ikp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

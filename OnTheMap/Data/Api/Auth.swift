@@ -11,5 +11,5 @@ struct Auth {
     static var uniqueKey = ""
     static var firstName = ""
     static var lastName = ""
-    static var objectId = ""
+    static var objectId = "abc"
 }
