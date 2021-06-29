@@ -20,6 +20,7 @@
 		C6A3A48C2687DD1C00834774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A48B2687DD1C00834774 /* Assets.xcassets */; };
 		C6A3A48F2687DD1C00834774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A48D2687DD1C00834774 /* LaunchScreen.storyboard */; };
 		C6D22047268BC4EE00CE481D /* MapAddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D22046268BC4EE00CE481D /* MapAddLocationViewController.swift */; };
+		C6D22049268BCFE200CE481D /* UpdateStudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D22048268BCFE200CE481D /* UpdateStudentLocationResponse.swift */; };
 		C6D4DAC52689456500BCE1AC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAC42689456400BCE1AC /* ApiClient.swift */; };
 		C6D4DAC72689460000BCE1AC /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAC62689460000BCE1AC /* EndPoint.swift */; };
 		C6D4DACB2689486000BCE1AC /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DACA2689486000BCE1AC /* LoginRequest.swift */; };
@@ -53,6 +54,7 @@
 		C6A3A48E2687DD1C00834774 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6A3A4902687DD1C00834774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6D22046268BC4EE00CE481D /* MapAddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAddLocationViewController.swift; sourceTree = "<group>"; };
+		C6D22048268BCFE200CE481D /* UpdateStudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStudentLocationResponse.swift; sourceTree = "<group>"; };
 		C6D4DAC42689456400BCE1AC /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		C6D4DAC62689460000BCE1AC /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		C6D4DACA2689486000BCE1AC /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				C6D4DADC26896C5000BCE1AC /* StudentLocationItemResponse.swift */,
 				C64C7D6F268B0D80003C0338 /* AddStudentLocationResponse.swift */,
 				C64C7D73268B12DC003C0338 /* UserProfileResponse.swift */,
+				C6D22048268BCFE200CE481D /* UpdateStudentLocationResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D22049268BCFE200CE481D /* UpdateStudentLocationResponse.swift in Sources */,
 				C6D4DAD626894AE800BCE1AC /* SessionResponse.swift in Sources */,
 				C6D4DADD26896C5000BCE1AC /* StudentLocationItemResponse.swift in Sources */,
 				C6A3A4872687DD1C00834774 /* LoginViewController.swift in Sources */,
