@@ -31,6 +31,17 @@ class ApiClient {
         }
     }
     
+    class func addStudentLocation(studentLocation: StudentLocationRequest, completion: @escaping (Bool, Error?) -> Void) {
+        
+        taskForPOSTRequest(url: EndPoint.addStudentLocation.url, body: studentLocation, response: LoginResponse.self, resize: true) { response, error in
+            if response != nil {
+                completion(true, nil)
+            } else {
+                completion(false, error)
+            }
+        }
+    }
+    
     class func taskForGETRequest<ResponseType: Decodable>(url: URL, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
