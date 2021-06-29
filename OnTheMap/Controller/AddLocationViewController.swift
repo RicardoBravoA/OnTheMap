@@ -92,7 +92,6 @@ class AddLocationViewController: UIViewController {
                 self.loading(false)
                 
                 if let location = location {
-                    print(location.coordinate)
                     self.getStudentLocationRequest(coordinate: location.coordinate)
                     self.performSegue(withIdentifier: "mapLocationSegue", sender: nil)
                 } else {

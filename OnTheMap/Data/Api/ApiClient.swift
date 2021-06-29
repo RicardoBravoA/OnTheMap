@@ -48,7 +48,8 @@ class ApiClient {
     
     class func addStudentLocation(studentLocation: StudentLocationRequest, completion: @escaping (Bool, Error?) -> Void) {
         taskForPOSTRequest(url: EndPoint.addStudentLocation.url, body: studentLocation, response: AddStudentLocationResponse.self, resize: false) { response, error in
-            if response != nil {
+            if let response = response {
+                Auth.objectId = response.objectId
                 completion(true, nil)
             } else {
                 completion(false, error)

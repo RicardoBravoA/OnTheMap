@@ -9,8 +9,8 @@ import UIKit
 
 class DashboardViewController: UITabBarController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         getStudentList()
     }

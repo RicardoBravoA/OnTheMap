@@ -298,6 +298,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jt4-RG-WXt">
                                 <rect key="frame" x="20" y="835.5" width="374" height="30"/>
                                 <state key="normal" title="FINISH"/>
+                                <connections>
+                                    <action selector="finishAction:" destination="8AH-uE-CWE" eventType="touchUpInside" id="thU-Rm-Go3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7XY-1g-JtN"/>
@@ -316,7 +319,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="bM4-Ai-rIk"/>
                     <connections>
-                        <outlet property="finishButton" destination="jt4-RG-WXt" id="Vog-3M-bfF"/>
+                        <outlet property="activityIndicator" destination="8aX-hR-nkb" id="foF-Ag-uC4"/>
+                        <outlet property="finishButton" destination="jt4-RG-WXt" id="mpn-rS-guW"/>
                         <outlet property="mapView" destination="N7v-C4-GEt" id="nne-ov-xsn"/>
                     </connections>
                 </viewController>
