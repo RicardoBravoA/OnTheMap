@@ -32,8 +32,7 @@ class ApiClient {
     }
     
     class func addStudentLocation(studentLocation: StudentLocationRequest, completion: @escaping (Bool, Error?) -> Void) {
-        
-        taskForPOSTRequest(url: EndPoint.addStudentLocation.url, body: studentLocation, response: LoginResponse.self, resize: true) { response, error in
+        taskForPOSTRequest(url: EndPoint.addStudentLocation.url, body: studentLocation, response: AddStudentLocationResponse.self, resize: false) { response, error in
             if response != nil {
                 completion(true, nil)
             } else {
