@@ -205,7 +205,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0aB-WW-NTF">
                                         <rect key="frame" x="0.0" y="124" width="294" height="114"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ubication" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZs-P1-CSl">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZs-P1-CSl">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -220,6 +220,7 @@
                                                 <state key="normal" title="FIND LOCATION"/>
                                                 <connections>
                                                     <action selector="findLocation:" destination="vnr-cI-Eyc" eventType="touchUpInside" id="6eF-ve-Zj7"/>
+                                                    <segue destination="8AH-uE-CWE" kind="show" identifier="mapLocationSegue" id="WrX-IG-k0D"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -263,13 +264,52 @@
                     <connections>
                         <outlet property="activityIndicator" destination="8xM-DB-HUD" id="cKK-mO-ILP"/>
                         <outlet property="findLocationButton" destination="fMt-oM-gnX" id="NOC-Cn-jNh"/>
-                        <outlet property="ubicationTextField" destination="PZs-P1-CSl" id="Uix-84-OLf"/>
+                        <outlet property="locationTextField" destination="PZs-P1-CSl" id="txN-6f-vUd"/>
                         <outlet property="websiteTextField" destination="JIe-7k-nro" id="XuU-sK-0JP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOn-Tf-wpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3113.04347826087" y="890.625"/>
+            <point key="canvasLocation" x="3167" y="1104"/>
+        </scene>
+        <!--Add Location-->
+        <scene sceneID="NRB-Vo-DGY">
+            <objects>
+                <viewController id="8AH-uE-CWE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3zN-YC-lxn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N7v-C4-GEt">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </mapView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8aX-hR-nkb">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jt4-RG-WXt">
+                                <rect key="frame" x="20" y="835.5" width="374" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7XY-1g-JtN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8aX-hR-nkb" firstAttribute="centerX" secondItem="3zN-YC-lxn" secondAttribute="centerX" id="4V4-qg-TVM"/>
+                            <constraint firstItem="N7v-C4-GEt" firstAttribute="leading" secondItem="7XY-1g-JtN" secondAttribute="leading" id="Ag6-Wu-7kZ"/>
+                            <constraint firstItem="7XY-1g-JtN" firstAttribute="trailing" secondItem="jt4-RG-WXt" secondAttribute="trailing" constant="20" id="Bwa-Y7-GO9"/>
+                            <constraint firstItem="8aX-hR-nkb" firstAttribute="centerY" secondItem="3zN-YC-lxn" secondAttribute="centerY" id="DWq-lB-0Dg"/>
+                            <constraint firstItem="N7v-C4-GEt" firstAttribute="top" secondItem="7XY-1g-JtN" secondAttribute="top" id="DkS-Am-Xgs"/>
+                            <constraint firstItem="jt4-RG-WXt" firstAttribute="leading" secondItem="7XY-1g-JtN" secondAttribute="leading" constant="20" id="Dx5-la-doO"/>
+                            <constraint firstAttribute="bottom" secondItem="N7v-C4-GEt" secondAttribute="bottom" id="F2R-Ot-rBW"/>
+                            <constraint firstItem="N7v-C4-GEt" firstAttribute="trailing" secondItem="7XY-1g-JtN" secondAttribute="trailing" id="MkN-Wk-2nO"/>
+                            <constraint firstItem="N7v-C4-GEt" firstAttribute="baseline" secondItem="jt4-RG-WXt" secondAttribute="firstBaseline" constant="40" id="ZKX-7B-ZGI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Location" id="bM4-Ai-rIk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l6F-CN-EdV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4089.8550724637685" y="1103.5714285714284"/>
         </scene>
         <!--Student Location View Controller-->
         <scene sceneID="6CX-aH-PtR">
@@ -378,7 +418,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lB9-p0-br2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2202.898550724638" y="890.625"/>
+            <point key="canvasLocation" x="2203" y="1103"/>
         </scene>
     </scenes>
     <resources>

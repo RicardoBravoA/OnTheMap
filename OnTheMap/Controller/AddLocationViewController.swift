@@ -11,7 +11,7 @@ import MapKit
 class AddLocationViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var ubicationTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var websiteTextField: UITextField!
     @IBOutlet weak var findLocationButton: UIButton!
     
@@ -19,7 +19,7 @@ class AddLocationViewController: UIViewController {
         super.viewDidLoad()
         hideKeyboard()
         
-        ubicationTextField.text = "Lima, Perú"
+        locationTextField.text = "Lima, Perú"
         websiteTextField.text = "http://google.com"
     }
     
@@ -31,8 +31,8 @@ class AddLocationViewController: UIViewController {
         loading(true)
         let website = websiteTextField.text
         
-        guard let ubication = ubicationTextField.text, ubication.isEmpty == false else {
-            show(message: "Enter a valid ubication")
+        guard let location = locationTextField.text, location.isEmpty == false else {
+            show(message: "Enter a valid location")
             loading(false)
             return
         }
@@ -43,7 +43,7 @@ class AddLocationViewController: UIViewController {
             return
         }
         
-        geocode(ubication: ubication)
+        geocode(location: location)
         
     }
     
@@ -60,20 +60,20 @@ class AddLocationViewController: UIViewController {
             }
         }
         DispatchQueue.main.async {
-            self.ubicationTextField.isEnabled = !loading
+            self.locationTextField.isEnabled = !loading
             self.websiteTextField.isEnabled = !loading
             self.findLocationButton.isEnabled = !loading
         }
     }
     
-    private func geocode(ubication: String) {
-        CLGeocoder().geocodeAddressString(ubication) { marker, error in
+    private func geocode(location: String) {
+        CLGeocoder().geocodeAddressString(location) { marker, error in
             if error != nil {
-                self.show(message: "Ubication not found")
+                self.show(message: "Location not found")
                 self.loading(false)
             } else {
                 guard let marker = marker else {
-                    self.show(message: "Ubication not found")
+                    self.show(message: "Location not found")
                     self.loading(false)
                     return
                 }
@@ -88,6 +88,7 @@ class AddLocationViewController: UIViewController {
                 
                 if let location = location {
                     // Move to next view controller
+                    print(location.coordinate)
                 } else {
                     self.show(message: "An error ocurred getting the coordinates")
                 }
