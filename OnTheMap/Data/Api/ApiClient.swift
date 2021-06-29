@@ -57,7 +57,7 @@ class ApiClient {
     }
     
     class func updateStudentLocation(studentLocation: StudentLocationRequest, completion: @escaping (Bool, Error?) -> Void) {
-        taskForPUTRequest(url: EndPoint.updateStudentLocation(value: Auth.objectId).url, body: studentLocation, response: AddStudentLocationResponse.self, resize: false) { response, error in
+        taskForPUTRequest(url: EndPoint.updateStudentLocation(value: Auth.objectId).url, body: studentLocation, response: UpdateStudentLocationResponse.self) { response, error in
             if response != nil {
                 completion(true, nil)
             } else {
