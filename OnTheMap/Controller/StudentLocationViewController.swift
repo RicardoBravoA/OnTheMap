@@ -40,7 +40,7 @@ extension StudentLocationViewController: UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let student = DataModel.studentList[indexPath.row]
         
-        BrowserUtil.open(viewController: self, urlString: student.mediaURL)
+        open(urlString: student.mediaURL)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
