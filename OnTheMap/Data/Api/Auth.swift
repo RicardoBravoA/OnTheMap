@@ -12,4 +12,11 @@ struct Auth {
     static var firstName = ""
     static var lastName = ""
     static var objectId = ""
+    
+    static func clear() {
+        uniqueKey = ""
+        firstName = ""
+        lastName = ""
+        objectId = ""
+    }
 }

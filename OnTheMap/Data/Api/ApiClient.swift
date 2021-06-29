@@ -67,6 +67,17 @@ class ApiClient {
         }
     }
     
+    class func logout(completion: @escaping (Bool, Error?) -> Void) {
+        taskForDELETERequest(url: EndPoint.logout.url, response: LogoutResponse.self, resize: true) { response, error in
+            if response != nil {
+                completion(true, nil)
+                Auth.clear()
+            } else {
+                completion(false, error)
+            }
+        }
+    }
+    
     class func taskForGETRequest<ResponseType: Decodable>(url: URL, response: ResponseType.Type, resize: Bool, completion: @escaping (ResponseType?, Error?) -> Void) {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -176,11 +187,9 @@ class ApiClient {
         task.resume()
     }
     
-    class func taskForDELETERequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, body: RequestType, response: ResponseType.Type, resize: Bool, completion: @escaping (ResponseType?, Error?) -> Void) {
+    class func taskForDELETERequest<ResponseType: Decodable>(url: URL, response: ResponseType.Type, resize: Bool, completion: @escaping (ResponseType?, Error?) -> Void) {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "DELETE"
-        
-        urlRequest.httpBody = try! JSONEncoder().encode(body)
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let data = data else {
