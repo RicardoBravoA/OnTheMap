@@ -56,6 +56,16 @@ class ApiClient {
         }
     }
     
+    class func updateStudentLocation(studentLocation: StudentLocationRequest, completion: @escaping (Bool, Error?) -> Void) {
+        taskForPUTRequest(url: EndPoint.updateStudentLocation(value: Auth.objectId).url, body: studentLocation, response: AddStudentLocationResponse.self, resize: false) { response, error in
+            if response != nil {
+                completion(true, nil)
+            } else {
+                completion(false, error)
+            }
+        }
+    }
+    
     class func taskForGETRequest<ResponseType: Decodable>(url: URL, response: ResponseType.Type, resize: Bool, completion: @escaping (ResponseType?, Error?) -> Void) {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
