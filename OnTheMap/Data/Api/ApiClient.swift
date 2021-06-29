@@ -13,7 +13,22 @@ class ApiClient {
         let loginRequest = LoginRequest(udacity: LoginRequestItem(username: user, password: pwd))
         
         taskForPOSTRequest(url: EndPoint.login.url, body: loginRequest, response: LoginResponse.self, resize: true) { response, error in
-            if response != nil {
+            if let response = response {
+                Auth.uniqueKey = response.account.key
+                userProfile { success, error in
+                    completion(success, error)
+                }
+            } else {
+                completion(false, error)
+            }
+        }
+    }
+    
+    class func userProfile(completion: @escaping (Bool, Error?) -> Void) {
+        taskForGETRequest(url: EndPoint.userProfile(value: Auth.uniqueKey).url, response: UserProfileResponse.self, resize: true) { response, error in
+            if let response = response {
+                Auth.firstName = response.firstName
+                Auth.lastName = response.lastName
                 completion(true, nil)
             } else {
                 completion(false, error)
@@ -22,7 +37,7 @@ class ApiClient {
     }
     
     class func studentLocation(completion: @escaping ([StudentLocationItemResponse], Error?) -> Void) {
-        taskForGETRequest(url: EndPoint.studentLocation.url, response: StudentLocationResponse.self) { response, error in
+        taskForGETRequest(url: EndPoint.studentLocation.url, response: StudentLocationResponse.self, resize: false) { response, error in
             if let response = response {
                 completion(response.results, nil)
             } else {
@@ -41,7 +56,7 @@ class ApiClient {
         }
     }
     
-    class func taskForGETRequest<ResponseType: Decodable>(url: URL, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) {
+    class func taskForGETRequest<ResponseType: Decodable>(url: URL, response: ResponseType.Type, resize: Bool, completion: @escaping (ResponseType?, Error?) -> Void) {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
@@ -52,13 +67,15 @@ class ApiClient {
             }
             let decoder = JSONDecoder()
             do {
-                let response = try decoder.decode(ResponseType.self, from: data)
+                let newData = resizeData(data: data, resize: resize)
+                let response = try decoder.decode(ResponseType.self, from: newData)
                 DispatchQueue.main.async {
                     completion(response, nil)
                 }
             } catch {
                 do {
-                    let errorResponse = try decoder.decode(ErrorResponse.self, from: data)
+                    let newData = resizeData(data: data, resize: resize)
+                    let errorResponse = try decoder.decode(ErrorResponse.self, from: newData)
                     DispatchQueue.main.async {
                         completion(nil, errorResponse)
                     }
@@ -89,20 +106,15 @@ class ApiClient {
             
             let decoder = JSONDecoder()
             do {
-                var newData: Data
-                if resize {
-                    newData = data.subdata(in: 5..<data.count)
-                } else {
-                     newData = data
-                }
+                let newData = resizeData(data: data, resize: resize)
                 let response = try decoder.decode(ResponseType.self, from: newData)
                 DispatchQueue.main.async {
                     completion(response, nil)
                 }
-                
             } catch {
                 do {
-                    let errorResponse = try decoder.decode(ErrorResponse.self, from: data)
+                    let newData = resizeData(data: data, resize: resize)
+                    let errorResponse = try decoder.decode(ErrorResponse.self, from: newData)
                     DispatchQueue.main.async {
                         completion(nil, errorResponse as Error)
                     }
@@ -114,6 +126,16 @@ class ApiClient {
             }
         }
         task.resume()
+    }
+    
+    private class func resizeData(data: Data, resize: Bool) -> Data {
+        var newData: Data
+        if resize {
+            newData = data.subdata(in: 5..<data.count)
+        } else {
+             newData = data
+        }
+        return newData
     }
     
 }

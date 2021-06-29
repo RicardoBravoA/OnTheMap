@@ -14,6 +14,7 @@ class AddLocationViewController: UIViewController {
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var websiteTextField: UITextField!
     @IBOutlet weak var findLocationButton: UIButton!
+    private var studentLocationRequest: StudentLocationRequest?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,10 @@ class AddLocationViewController: UIViewController {
         }
     }
     
+    private func getStudentLocationRequest(coordinate: CLLocationCoordinate2D) {
+        studentLocationRequest = StudentLocationRequest(uniqueKey: Auth.uniqueKey, firstName: Auth.firstName, lastName: Auth.lastName, mapString: locationTextField?.text ?? "", mediaURL: websiteTextField?.text ?? "", latitude: coordinate.latitude, longitude: coordinate.longitude)
+    }
+    
     private func geocode(location: String) {
         CLGeocoder().geocodeAddressString(location) { marker, error in
             if error != nil {
@@ -87,12 +92,20 @@ class AddLocationViewController: UIViewController {
                 self.loading(false)
                 
                 if let location = location {
-                    // Move to next view controller
                     print(location.coordinate)
+                    self.getStudentLocationRequest(coordinate: location.coordinate)
+                    self.performSegue(withIdentifier: "mapLocationSegue", sender: nil)
                 } else {
                     self.show(message: "An error ocurred getting the coordinates")
                 }
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mapLocationSegue" {
+            let viewController = segue.destination as! MapAddLocationViewController
+            viewController.studentLocationRequest = studentLocationRequest
         }
     }
     
