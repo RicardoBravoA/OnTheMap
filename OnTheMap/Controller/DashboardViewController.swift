@@ -51,4 +51,7 @@ class DashboardViewController: UITabBarController {
         }
     }
     
+    @IBAction func logout(_ sender: Any) {
+        
+    }
 }

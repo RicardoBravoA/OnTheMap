@@ -128,7 +128,11 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="HMI-SL-2JK" customClass="DashboardViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="On the Map" id="5dN-a6-fgq">
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="3nd-cu-Qhk"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="3nd-cu-Qhk">
+                            <connections>
+                                <action selector="logout:" destination="HMI-SL-2JK" id="aCQ-cg-KJ5"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="plus" catalog="system" id="Xll-4K-cz7">
                                 <connections>
