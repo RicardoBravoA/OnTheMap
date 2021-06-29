@@ -19,9 +19,6 @@ class AddLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboard()
-        
-        locationTextField.text = "Lima, Perú"
-        websiteTextField.text = "http://google.com"
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
