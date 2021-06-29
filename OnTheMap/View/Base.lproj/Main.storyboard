@@ -225,7 +225,6 @@
                                                 <state key="normal" title="FIND LOCATION"/>
                                                 <connections>
                                                     <action selector="findLocation:" destination="vnr-cI-Eyc" eventType="touchUpInside" id="6eF-ve-Zj7"/>
-                                                    <segue destination="8AH-uE-CWE" kind="show" identifier="mapLocationSegue" id="WrX-IG-k0D"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -271,6 +270,7 @@
                         <outlet property="findLocationButton" destination="fMt-oM-gnX" id="NOC-Cn-jNh"/>
                         <outlet property="locationTextField" destination="PZs-P1-CSl" id="txN-6f-vUd"/>
                         <outlet property="websiteTextField" destination="JIe-7k-nro" id="XuU-sK-0JP"/>
+                        <segue destination="8AH-uE-CWE" kind="show" identifier="mapLocationSegue" id="0h1-Ur-V8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOn-Tf-wpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -280,7 +280,7 @@
         <!--Add Location-->
         <scene sceneID="NRB-Vo-DGY">
             <objects>
-                <viewController id="8AH-uE-CWE" sceneMemberID="viewController">
+                <viewController id="8AH-uE-CWE" customClass="MapAddLocationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3zN-YC-lxn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

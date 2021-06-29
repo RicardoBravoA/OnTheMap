@@ -19,6 +19,7 @@
 		C6A3A48A2687DD1C00834774 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A4882687DD1C00834774 /* Main.storyboard */; };
 		C6A3A48C2687DD1C00834774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A48B2687DD1C00834774 /* Assets.xcassets */; };
 		C6A3A48F2687DD1C00834774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6A3A48D2687DD1C00834774 /* LaunchScreen.storyboard */; };
+		C6D22047268BC4EE00CE481D /* MapAddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D22046268BC4EE00CE481D /* MapAddLocationViewController.swift */; };
 		C6D4DAC52689456500BCE1AC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAC42689456400BCE1AC /* ApiClient.swift */; };
 		C6D4DAC72689460000BCE1AC /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DAC62689460000BCE1AC /* EndPoint.swift */; };
 		C6D4DACB2689486000BCE1AC /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D4DACA2689486000BCE1AC /* LoginRequest.swift */; };
@@ -51,6 +52,7 @@
 		C6A3A48B2687DD1C00834774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6A3A48E2687DD1C00834774 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6A3A4902687DD1C00834774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6D22046268BC4EE00CE481D /* MapAddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAddLocationViewController.swift; sourceTree = "<group>"; };
 		C6D4DAC42689456400BCE1AC /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		C6D4DAC62689460000BCE1AC /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		C6D4DACA2689486000BCE1AC /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				C6D4DAEB2689A15A00BCE1AC /* DashboardViewController.swift */,
 				C64C7D69268A8B35003C0338 /* AddLocationViewController.swift */,
 				C64C7D6B268AEA5B003C0338 /* UIViewController+Extension.swift */,
+				C6D22046268BC4EE00CE481D /* MapAddLocationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				C6A3A4832687DD1C00834774 /* AppDelegate.swift in Sources */,
 				C64C7D6C268AEA5B003C0338 /* UIViewController+Extension.swift in Sources */,
 				C64C7D72268B0F91003C0338 /* Auth.swift in Sources */,
+				C6D22047268BC4EE00CE481D /* MapAddLocationViewController.swift in Sources */,
 				C6A3A4852687DD1C00834774 /* SceneDelegate.swift in Sources */,
 				C6D4DADB26896BA700BCE1AC /* StudentLocationResponse.swift in Sources */,
 				C6D4DAC52689456500BCE1AC /* ApiClient.swift in Sources */,
