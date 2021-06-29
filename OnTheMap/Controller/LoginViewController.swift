@@ -23,12 +23,12 @@ class LoginViewController: UIViewController {
         let pwd = pwdTextField.text
         
         if email?.isEmpty == true {
-            AlertUtil.show(viewController: self, message: "Enter Email")
+            show(message: "Enter Email")
             return
         }
         
         if pwd?.isEmpty == true {
-            AlertUtil.show(viewController: self, message: "Enter Password")
+            show(message: "Enter Password")
             return
         }
         
@@ -36,14 +36,14 @@ class LoginViewController: UIViewController {
             if success {
                 self.performSegue(withIdentifier: "dashboardSegue", sender: nil)
             } else {
-                AlertUtil.show(viewController: self, message: error?.localizedDescription ?? "")
+                self.show(message: error?.localizedDescription ?? "")
             }
         }
         
     }
     
     @IBAction func signUp(_ sender: UIButton) {
-        BrowserUtil.open(viewController: self, urlString: EndPoint.web.value)
+        open(urlString: EndPoint.web.value)
     }
     
 }
