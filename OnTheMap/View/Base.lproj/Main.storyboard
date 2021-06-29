@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qVd-zm-rlj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O5C-qV-9xq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQm-Qg-b0K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3518.840579710145" y="-170.08928571428569"/>
+            <point key="canvasLocation" x="4091" y="-272"/>
         </scene>
         <!--Add Location-->
         <scene sceneID="Rjj-Jm-wfI">
@@ -192,37 +192,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="FVM-mX-xvf">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="FVM-mX-xvf">
                                 <rect key="frame" x="60" y="329" width="294" height="238"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6R-EG-UkO">
-                                        <rect key="frame" x="97" y="0.0" width="100" height="100"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OYT-c0-9Hw">
-                                                <rect key="frame" x="0.0" y="-0.5" width="100" height="100.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="89k-nd-211"/>
-                                                    <constraint firstAttribute="width" constant="100" id="iRH-LW-kF8"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OYT-c0-9Hw">
+                                        <rect key="frame" x="97" y="-0.5" width="100" height="100.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="89k-nd-211"/>
+                                            <constraint firstAttribute="width" constant="100" id="iRH-LW-kF8"/>
+                                        </constraints>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0aB-WW-NTF">
                                         <rect key="frame" x="0.0" y="124" width="294" height="114"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ubication" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZs-P1-CSl">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JIe-7k-nro">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JIe-7k-nro">
                                                 <rect key="frame" x="0.0" y="42" width="294" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done" textContentType="url"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMt-oM-gnX">
                                                 <rect key="frame" x="0.0" y="84" width="294" height="30"/>
                                                 <state key="normal" title="FIND LOCATION"/>
+                                                <connections>
+                                                    <action selector="findLocation:" destination="vnr-cI-Eyc" eventType="touchUpInside" id="6eF-ve-Zj7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -240,12 +238,17 @@
                                     <constraint firstItem="0aB-WW-NTF" firstAttribute="leading" secondItem="FVM-mX-xvf" secondAttribute="leading" id="6jt-u1-L7Z"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8xM-DB-HUD">
+                                <rect key="frame" x="197" y="575" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jhs-HP-Fs2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="8xM-DB-HUD" firstAttribute="centerX" secondItem="oJZ-Yh-NR6" secondAttribute="centerX" id="90d-G7-CAy"/>
                             <constraint firstItem="FVM-mX-xvf" firstAttribute="centerX" secondItem="oJZ-Yh-NR6" secondAttribute="centerX" id="HNE-6N-jjb"/>
                             <constraint firstItem="Jhs-HP-Fs2" firstAttribute="trailing" secondItem="FVM-mX-xvf" secondAttribute="trailing" constant="60" id="Hw0-Mr-L9E"/>
+                            <constraint firstItem="8xM-DB-HUD" firstAttribute="top" secondItem="FVM-mX-xvf" secondAttribute="bottom" constant="8" symbolic="YES" id="Lwc-ei-tez"/>
                             <constraint firstItem="FVM-mX-xvf" firstAttribute="centerY" secondItem="oJZ-Yh-NR6" secondAttribute="centerY" id="Pox-OJ-paV"/>
                             <constraint firstItem="FVM-mX-xvf" firstAttribute="leading" secondItem="Jhs-HP-Fs2" secondAttribute="leading" constant="60" id="o8P-BJ-WKc"/>
                         </constraints>
@@ -257,6 +260,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="8xM-DB-HUD" id="cKK-mO-ILP"/>
+                        <outlet property="findLocationButton" destination="fMt-oM-gnX" id="NOC-Cn-jNh"/>
+                        <outlet property="ubicationTextField" destination="PZs-P1-CSl" id="Uix-84-OLf"/>
+                        <outlet property="websiteTextField" destination="JIe-7k-nro" id="XuU-sK-0JP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOn-Tf-wpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -351,7 +360,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hd-wa-Ox0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5339.130434782609" y="522.99107142857144"/>
+            <point key="canvasLocation" x="4090" y="418"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fRT-aB-Blc">

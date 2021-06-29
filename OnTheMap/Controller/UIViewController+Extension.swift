@@ -38,4 +38,24 @@ extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    func buttonEnabled(_ enabled: Bool, button: UIButton) {
+        if enabled {
+            button.isEnabled = true
+            button.alpha = 1.0
+        } else {
+            button.isEnabled = false
+            button.alpha = 0.5
+        }
+    }
+    
+    @objc func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:    #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
 }
