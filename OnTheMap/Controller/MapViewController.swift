@@ -37,6 +37,7 @@ class MapViewController: UIViewController {
         
         DispatchQueue.main.async {
             self.mapView.addAnnotations(self.annotations)
+            self.mapView.showAnnotations(self.mapView.annotations, animated: true)
         }
     }
     
