@@ -12,7 +12,7 @@ class ApiClient {
     class func login(user: String, pwd: String, completion: @escaping (Bool, Error?) -> Void) {
         let loginRequest = LoginRequest(udacity: LoginRequestItem(username: user, password: pwd))
         
-        taskForPOSTRequest(url: EndPoint.login.url, body: loginRequest, response: LoginResponse.self) { response, error in
+        taskForPOSTRequest(url: EndPoint.login.url, body: loginRequest, response: LoginResponse.self, resize: true) { response, error in
             if response != nil {
                 completion(true, nil)
             } else {
@@ -62,7 +62,7 @@ class ApiClient {
         task.resume()
     }
     
-    class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, body: RequestType, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) {
+    class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, body: RequestType, response: ResponseType.Type, resize: Bool, completion: @escaping (ResponseType?, Error?) -> Void) {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -79,12 +79,17 @@ class ApiClient {
             
             let decoder = JSONDecoder()
             do {
-                let newData = data.subdata(in: 5..<data.count)
-                
+                var newData: Data
+                if resize {
+                    newData = data.subdata(in: 5..<data.count)
+                } else {
+                     newData = data
+                }
                 let response = try decoder.decode(ResponseType.self, from: newData)
                 DispatchQueue.main.async {
                     completion(response, nil)
                 }
+                
             } catch {
                 do {
                     let errorResponse = try decoder.decode(ErrorResponse.self, from: data)
