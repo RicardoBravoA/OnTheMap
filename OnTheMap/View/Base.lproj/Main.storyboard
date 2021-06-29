@@ -40,7 +40,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="516-t5-Udj">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="516-t5-Udj" customClass="RectangleButton" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="84" width="294" height="30"/>
                                                 <state key="normal" title="LOG IN"/>
                                                 <connections>
@@ -221,7 +221,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done" textContentType="url"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMt-oM-gnX">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMt-oM-gnX" customClass="RectangleButton" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="84" width="294" height="30"/>
                                                 <state key="normal" title="FIND LOCATION"/>
                                                 <connections>
@@ -295,8 +295,8 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8aX-hR-nkb">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jt4-RG-WXt">
-                                <rect key="frame" x="20" y="835.5" width="374" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jt4-RG-WXt" customClass="RectangleButton" customModule="OnTheMap" customModuleProvider="target">
+                                <rect key="frame" x="20" y="815.5" width="374" height="30"/>
                                 <state key="normal" title="FINISH"/>
                                 <connections>
                                     <action selector="finishAction:" destination="8AH-uE-CWE" eventType="touchUpInside" id="thU-Rm-Go3"/>
@@ -314,7 +314,7 @@
                             <constraint firstItem="jt4-RG-WXt" firstAttribute="leading" secondItem="7XY-1g-JtN" secondAttribute="leading" constant="20" id="Dx5-la-doO"/>
                             <constraint firstAttribute="bottom" secondItem="N7v-C4-GEt" secondAttribute="bottom" id="F2R-Ot-rBW"/>
                             <constraint firstItem="N7v-C4-GEt" firstAttribute="trailing" secondItem="7XY-1g-JtN" secondAttribute="trailing" id="MkN-Wk-2nO"/>
-                            <constraint firstItem="N7v-C4-GEt" firstAttribute="baseline" secondItem="jt4-RG-WXt" secondAttribute="firstBaseline" constant="40" id="ZKX-7B-ZGI"/>
+                            <constraint firstItem="N7v-C4-GEt" firstAttribute="baseline" secondItem="jt4-RG-WXt" secondAttribute="firstBaseline" constant="60" id="ZKX-7B-ZGI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="bM4-Ai-rIk"/>
