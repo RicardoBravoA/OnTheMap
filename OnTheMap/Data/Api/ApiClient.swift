@@ -13,12 +13,17 @@ class ApiClient {
         let loginRequest = LoginRequest(udacity: LoginRequestItem(username: user, password: pwd))
         
         taskForPOSTRequest(url: EndPoint.login.url, body: loginRequest, response: LoginResponse.self, resize: true) { response, error in
-            if response != nil {
+            if let response = response {
+                Auth.uniqueKey = response.account.key
                 completion(true, nil)
             } else {
                 completion(false, error)
             }
         }
+    }
+    
+    class func userInfo(completion: @escaping (Bool, Error?) -> Void) {
+        
     }
     
     class func studentLocation(completion: @escaping ([StudentLocationItemResponse], Error?) -> Void) {
