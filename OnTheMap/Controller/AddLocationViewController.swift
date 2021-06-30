@@ -46,18 +46,10 @@ class AddLocationViewController: UIViewController {
     }
     
     private func loading(_ loading: Bool) {
-        if loading {
-            DispatchQueue.main.async {
-                self.activityIndicator.startAnimating()
-                self.buttonEnabled(false, button: self.findLocationButton)
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-                self.buttonEnabled(true, button: self.findLocationButton)
-            }
-        }
         DispatchQueue.main.async {
+            loading ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
+            loading ? self.buttonEnabled(false, button: self.findLocationButton) : self.buttonEnabled(true, button: self.findLocationButton)
+            
             self.locationTextField.isEnabled = !loading
             self.websiteTextField.isEnabled = !loading
             self.findLocationButton.isEnabled = !loading

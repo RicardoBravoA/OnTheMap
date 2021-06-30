@@ -67,18 +67,9 @@ class MapAddLocationViewController: UIViewController {
     }
     
     func loading(_ loading: Bool) {
-        if loading {
-            DispatchQueue.main.async {
-                self.activityIndicator.startAnimating()
-                self.buttonEnabled(false, button: self.finishButton)
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-                self.buttonEnabled(true, button: self.finishButton)
-            }
-        }
         DispatchQueue.main.async {
+            loading ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
+            loading ? self.buttonEnabled(false, button: self.finishButton) : self.buttonEnabled(true, button: self.finishButton)
             self.finishButton.isEnabled = !loading
         }
     }

@@ -39,17 +39,12 @@ extension UIViewController {
     }
     
     func buttonEnabled(_ enabled: Bool, button: UIButton) {
-        if enabled {
-            button.isEnabled = true
-            button.alpha = 1.0
-        } else {
-            button.isEnabled = false
-            button.alpha = 0.5
-        }
+        button.isEnabled = enabled
+        button.alpha = enabled ? 1.0 : 0.5
     }
     
     @objc func hideKeyboard() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:    #selector(UIViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }

@@ -25,7 +25,7 @@ enum EndPoint {
             case .web:
                 return "https://auth.udacity.com/sign-in"
             case .studentLocation:
-                return EndPoint.urlBase + "StudentLocation?order=-updatedAt"
+                return EndPoint.urlBase + "StudentLocation?order=-updatedAt&limit=100"
             case .addStudentLocation:
                 return EndPoint.urlBase + "StudentLocation"
             case .userProfile(let value):
