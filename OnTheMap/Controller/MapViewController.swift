@@ -13,10 +13,6 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     var annotations = [MKPointAnnotation]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func loadData(){
         mapView.removeAnnotations(annotations)
         annotations.removeAll()
