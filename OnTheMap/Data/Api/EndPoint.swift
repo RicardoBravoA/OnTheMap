@@ -16,6 +16,7 @@ enum EndPoint {
     case addStudentLocation
     case userProfile(value: String)
     case updateStudentLocation(value: String)
+    case logout
     
     var value: String {
         switch self {
@@ -31,6 +32,8 @@ enum EndPoint {
                 return EndPoint.urlBase + "users/\(value)"
             case .updateStudentLocation(let value):
                 return EndPoint.urlBase + "StudentLocation/\(value)"
+            case .logout:
+                return EndPoint.urlBase + "session"
         }
     }
     

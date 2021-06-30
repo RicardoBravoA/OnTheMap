@@ -40,7 +40,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="516-t5-Udj">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="516-t5-Udj" customClass="RectangleButton" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="84" width="294" height="30"/>
                                                 <state key="normal" title="LOG IN"/>
                                                 <connections>
@@ -82,6 +82,9 @@
                                     <constraint firstAttribute="trailing" secondItem="YL8-33-lwB" secondAttribute="trailing" id="bCu-3X-WuM"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="4HC-Fn-bAI">
+                                <rect key="frame" x="197" y="594" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,13 +92,17 @@
                             <constraint firstItem="5QY-6i-HD9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="DF0-DE-ycn"/>
                             <constraint firstItem="5QY-6i-HD9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LwI-11-lLw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5QY-6i-HD9" secondAttribute="trailing" constant="60" id="cBE-aX-WAq"/>
+                            <constraint firstItem="4HC-Fn-bAI" firstAttribute="top" secondItem="5QY-6i-HD9" secondAttribute="bottom" constant="8" symbolic="YES" id="hjV-xh-HkU"/>
+                            <constraint firstItem="4HC-Fn-bAI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s0f-3z-Kkt"/>
                             <constraint firstItem="5QY-6i-HD9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vNJ-rE-Wax"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="4HC-Fn-bAI" id="xhA-J1-nh1"/>
                         <outlet property="emailTextField" destination="vFc-nJ-6jK" id="HNL-7l-rIa"/>
                         <outlet property="loginButton" destination="516-t5-Udj" id="deR-ZD-ecW"/>
                         <outlet property="pwdTextField" destination="LH4-VY-Skp" id="kpJ-bv-wIG"/>
+                        <outlet property="signUpButton" destination="rLH-wL-5HC" id="X5m-eD-8mC"/>
                         <segue destination="qVd-zm-rlj" kind="show" identifier="dashboardSegue" id="SW8-PO-yIC"/>
                     </connections>
                 </viewController>
@@ -128,11 +135,15 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="HMI-SL-2JK" customClass="DashboardViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="On the Map" id="5dN-a6-fgq">
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="3nd-cu-Qhk"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="3nd-cu-Qhk">
+                            <connections>
+                                <action selector="logout:" destination="HMI-SL-2JK" id="aCQ-cg-KJ5"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="plus" catalog="system" id="Xll-4K-cz7">
                                 <connections>
-                                    <segue destination="O5C-qV-9xq" kind="showDetail" id="uRX-8P-Qf3"/>
+                                    <action selector="addLocation:" destination="HMI-SL-2JK" id="ZPe-yf-z2B"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="arrow.clockwise" catalog="system" id="blY-aA-DRP">
@@ -150,6 +161,7 @@
                     <connections>
                         <segue destination="QDO-ph-9cz" kind="relationship" relationship="viewControllers" id="RcA-Dj-Mw3"/>
                         <segue destination="sci-aV-gy9" kind="relationship" relationship="viewControllers" id="EjE-au-tBM"/>
+                        <segue destination="O5C-qV-9xq" kind="showDetail" identifier="addLocationSegue" id="BMu-Yf-Iz4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54X-au-ikp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -220,7 +232,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done" textContentType="url"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMt-oM-gnX">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMt-oM-gnX" customClass="RectangleButton" customModule="OnTheMap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="84" width="294" height="30"/>
                                                 <state key="normal" title="FIND LOCATION"/>
                                                 <connections>
@@ -294,9 +306,12 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8aX-hR-nkb">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jt4-RG-WXt">
-                                <rect key="frame" x="20" y="835.5" width="374" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jt4-RG-WXt" customClass="RectangleButton" customModule="OnTheMap" customModuleProvider="target">
+                                <rect key="frame" x="20" y="815.5" width="374" height="30"/>
                                 <state key="normal" title="FINISH"/>
+                                <connections>
+                                    <action selector="finishAction:" destination="8AH-uE-CWE" eventType="touchUpInside" id="thU-Rm-Go3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7XY-1g-JtN"/>
@@ -310,12 +325,13 @@
                             <constraint firstItem="jt4-RG-WXt" firstAttribute="leading" secondItem="7XY-1g-JtN" secondAttribute="leading" constant="20" id="Dx5-la-doO"/>
                             <constraint firstAttribute="bottom" secondItem="N7v-C4-GEt" secondAttribute="bottom" id="F2R-Ot-rBW"/>
                             <constraint firstItem="N7v-C4-GEt" firstAttribute="trailing" secondItem="7XY-1g-JtN" secondAttribute="trailing" id="MkN-Wk-2nO"/>
-                            <constraint firstItem="N7v-C4-GEt" firstAttribute="baseline" secondItem="jt4-RG-WXt" secondAttribute="firstBaseline" constant="40" id="ZKX-7B-ZGI"/>
+                            <constraint firstItem="N7v-C4-GEt" firstAttribute="baseline" secondItem="jt4-RG-WXt" secondAttribute="firstBaseline" constant="60" id="ZKX-7B-ZGI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="bM4-Ai-rIk"/>
                     <connections>
-                        <outlet property="finishButton" destination="jt4-RG-WXt" id="Vog-3M-bfF"/>
+                        <outlet property="activityIndicator" destination="8aX-hR-nkb" id="foF-Ag-uC4"/>
+                        <outlet property="finishButton" destination="jt4-RG-WXt" id="mpn-rS-guW"/>
                         <outlet property="mapView" destination="N7v-C4-GEt" id="nne-ov-xsn"/>
                     </connections>
                 </viewController>

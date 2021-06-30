@@ -9,8 +9,8 @@ import UIKit
 
 class DashboardViewController: UITabBarController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         getStudentList()
     }
@@ -36,5 +36,28 @@ class DashboardViewController: UITabBarController {
     
     @IBAction func reloadData(_ sender: UIBarButtonItem) {
         getStudentList()
+    }
+    
+    @IBAction func addLocation(_ sender: Any) {
+        if Auth.objectId.isEmpty {
+            self.performSegue(withIdentifier: "addLocationSegue", sender: nil)
+        } else {
+            let alertController = UIAlertController(title: "", message: "You have already posted a student location. Would you like to overwrite your current location?", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Overwrite", style: .default, handler: { action in
+                self.performSegue(withIdentifier: "addLocationSegue", sender: nil)
+            }))
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+            present(alertController, animated: true)
+        }
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+        ApiClient.logout { success, error in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.show(message: error?.localizedDescription ?? "")
+            }
+        }
     }
 }

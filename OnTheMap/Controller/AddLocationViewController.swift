@@ -19,9 +19,6 @@ class AddLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboard()
-        
-        locationTextField.text = "Lima, Perú"
-        websiteTextField.text = "http://google.com"
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -92,7 +89,6 @@ class AddLocationViewController: UIViewController {
                 self.loading(false)
                 
                 if let location = location {
-                    print(location.coordinate)
                     self.getStudentLocationRequest(coordinate: location.coordinate)
                     self.performSegue(withIdentifier: "mapLocationSegue", sender: nil)
                 } else {

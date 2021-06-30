@@ -13,17 +13,14 @@ class MapAddLocationViewController: UIViewController {
     var studentLocationRequest: StudentLocationRequest?
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var finishButton: UIButton!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         showLocation()
-        
-        print(studentLocationRequest)
     }
     
     private func showLocation() {
-        
         if let student = studentLocationRequest {
             mapView.removeAnnotations(mapView.annotations)
             let annotation = MKPointAnnotation()
@@ -35,6 +32,54 @@ class MapAddLocationViewController: UIViewController {
                 self.mapView.showAnnotations(self.mapView.annotations, animated: true)
                 self.mapView.selectAnnotation(annotation, animated: true)
             }
+        }
+    }
+    @IBAction func finishAction(_ sender: Any) {
+        loading(true)
+        
+        guard let student = studentLocationRequest else {
+            show(message: "An error occurred getting student info")
+            loading(false)
+            return
+        }
+        
+        if Auth.objectId.isEmpty {
+            ApiClient.addStudentLocation(studentLocation: student) { success, error in
+                if success {
+                    self.loading(false)
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    self.loading(false)
+                    self.show(message: error?.localizedDescription ?? "")
+                }
+            }
+        } else {
+            ApiClient.updateStudentLocation(studentLocation: student) { success, error in
+                if success {
+                    self.loading(false)
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    self.loading(false)
+                    self.show(message: error?.localizedDescription ?? "")
+                }
+            }
+        }
+    }
+    
+    func loading(_ loading: Bool) {
+        if loading {
+            DispatchQueue.main.async {
+                self.activityIndicator.startAnimating()
+                self.buttonEnabled(false, button: self.finishButton)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.buttonEnabled(true, button: self.finishButton)
+            }
+        }
+        DispatchQueue.main.async {
+            self.finishButton.isEnabled = !loading
         }
     }
 }
