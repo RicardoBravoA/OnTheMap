@@ -82,6 +82,9 @@
                                     <constraint firstAttribute="trailing" secondItem="YL8-33-lwB" secondAttribute="trailing" id="bCu-3X-WuM"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="4HC-Fn-bAI">
+                                <rect key="frame" x="197" y="594" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,13 +92,17 @@
                             <constraint firstItem="5QY-6i-HD9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="DF0-DE-ycn"/>
                             <constraint firstItem="5QY-6i-HD9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LwI-11-lLw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5QY-6i-HD9" secondAttribute="trailing" constant="60" id="cBE-aX-WAq"/>
+                            <constraint firstItem="4HC-Fn-bAI" firstAttribute="top" secondItem="5QY-6i-HD9" secondAttribute="bottom" constant="8" symbolic="YES" id="hjV-xh-HkU"/>
+                            <constraint firstItem="4HC-Fn-bAI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s0f-3z-Kkt"/>
                             <constraint firstItem="5QY-6i-HD9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vNJ-rE-Wax"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="4HC-Fn-bAI" id="xhA-J1-nh1"/>
                         <outlet property="emailTextField" destination="vFc-nJ-6jK" id="HNL-7l-rIa"/>
                         <outlet property="loginButton" destination="516-t5-Udj" id="deR-ZD-ecW"/>
                         <outlet property="pwdTextField" destination="LH4-VY-Skp" id="kpJ-bv-wIG"/>
+                        <outlet property="signUpButton" destination="rLH-wL-5HC" id="X5m-eD-8mC"/>
                         <segue destination="qVd-zm-rlj" kind="show" identifier="dashboardSegue" id="SW8-PO-yIC"/>
                     </connections>
                 </viewController>
